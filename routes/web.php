@@ -21,8 +21,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('list',[RestaurantController::class,'show'])->name('restaurants');
+Route::get('index',[RestaurantController::class,'show'])->name('restaurants');
 
-Route::get('review/{restaurant}',[RestaurantController::class,'index'])->name('review-index');
+Route::get('show/{restaurant}',[RestaurantController::class,'index'])->name('review-index');
 
-Route::post('store-comment',[RestaurantController::class, 'store'])->name('store-comment');
+Route::post('store',[RestaurantController::class, 'store'])->name('store-comment');
